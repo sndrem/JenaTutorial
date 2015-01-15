@@ -10,6 +10,8 @@ public class Main {
 		
 		HelloRDFWorld hello = new HelloRDFWorld();
 		
+		Products products = new Products();
+		
 		
 		//hello.printStatements();
 		//hello.toXML();
@@ -18,6 +20,7 @@ public class Main {
 		//hello.writeToFile();
 		//hello.readFile();
 		
+		/*
 		Resource vcard = hello.getResource();
 		
 		System.out.println(vcard.toString());
@@ -33,7 +36,7 @@ public class Main {
 		/*
 		 * Legg til to nick for Sindre
 		 */
-		
+		/*
 		vcard.addProperty(VCARD.NICKNAME, "Sid").addProperty(VCARD.NICKNAME, "Simsalabim").addProperty(VCARD.NICKNAME, "Snabelsatan");
 		
 		System.out.println("The nicknames for \"" + fullName + "\" are: ");
@@ -42,7 +45,7 @@ public class Main {
 			while(iter.hasNext()){
 				System.out.println("    " + iter.nextStatement().getObject().toString());
 			}
-		
+		*/
 		
 		
 		

@@ -93,12 +93,10 @@ import com.hp.hpl.jena.vocabulary.VCARD;
 				String filename = "learningJena.rdf";
 				FileWriter fw = new FileWriter(filename);
 				model.write(fw, "RDF/XML-ABBREV");
+				System.out.println("File was sucessfully written");
 			} catch (IOException e){
 				e.printStackTrace();
-			} finally {
-				
-				System.out.println("File was sucessfully written");
-			}
+			} 
 		}
 		
 		public String toString(){
