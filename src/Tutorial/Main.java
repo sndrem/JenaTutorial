@@ -11,6 +11,7 @@ public class Main {
 		HelloRDFWorld hello = new HelloRDFWorld();
 		
 		Products products = new Products();
+		products.printModel("TURTLE");
 		
 		
 		//hello.printStatements();

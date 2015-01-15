@@ -1,7 +1,9 @@
 package Tutorial;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
@@ -18,7 +20,6 @@ public class Products {
 		productList = new ArrayList<Resource>();
 		addResources();
 		addProperties();
-		printModel();
 	}
 	
 	/*
@@ -36,7 +37,7 @@ public class Products {
 	 * Method to add properties to the resources
 	 */
 	public void addProperties(){
-		//Let's finish the first product first
+		//Let's get to two products
 		Resource product1 = productList.get(0);
 		Resource product2 = productList.get(1);
 		
@@ -75,11 +76,34 @@ public class Products {
 		product2.addProperty(product_ManufactureLocationProp, "Ottawa");
 		product2.addProperty(product_productSKUSku, "KD5234");
 		product2.addLiteral(product_AvailableProp, 55);
+	}
+	
+	public void printModel(String syntax){
+		
+		if(correctSyntax(syntax)){
+			System.out.println("The following model is written in " + syntax + "\n");
+			productModel.write(System.out, syntax);
+		} else {
+			System.out.println("The syntax is not supported");
+		}
+		
 		
 		
 	}
 	
-	public void printModel(){
-		productModel.write(System.out, "TURTLE");
+	public boolean correctSyntax(String syntax){
+		Set<String> validTypes = new HashSet();
+		
+		validTypes.add("TURTLE");
+		validTypes.add("RDF/XML");
+		validTypes.add("N-TRIPLES");
+		validTypes.add("RDF/JSON");
+		
+		if(validTypes.contains(syntax)){
+			return true;
+		} else {
+			return false;
+		}
+		
 	}
 }
